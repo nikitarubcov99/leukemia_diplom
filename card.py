@@ -137,7 +137,7 @@ class ui_card(QDialog):
         with open("image_from_db.jpg", "wb") as file:
             file.write(self.start_image)
             file.close()
-        file_name = "C:/Users/nero1/PycharmProjects/pythonProject7/image_from_db.jpg"
+        file_name = "C:/Users/Maxim/PycharmProjects/leukemia_diplom/image_from_db.jpg"
         self.pixmap = QPixmap(file_name)
         self.pixmap = self.pixmap.scaled(241, 221)
         self.label_10.setPixmap(self.pixmap)
@@ -146,14 +146,14 @@ class ui_card(QDialog):
         with open("image_from_db1.jpg", "wb") as file:
             file.write(self.anomaly_image)
             file.close()
-        file_name = "C:/Users/nero1/PycharmProjects/pythonProject7/image_from_db1.jpg"
+        file_name = "C:/Users/Maxim/PycharmProjects/leukemia_diplom/image_from_db1.jpg"
         self.pixmap = QPixmap(file_name)
         self.pixmap = self.pixmap.scaled(241, 221)
         self.label_11.setPixmap(self.pixmap)
         os.remove(file_name)
 
-        if self.diagnose == 'лейкимия':
-            self.label_9.setText(f'Обнаружена лейкимия, код по МКБ-10 {self.mkb_diagnose}')
+        if self.diagnose == 'лейкемия':
+            self.label_9.setText(f'Обнаружена лейкемия, код по МКБ-10 {self.mkb_diagnose}')
         else:
             self.label_9.setText('Заболеваний не обнаружено')
         self.current_date = date.today()
@@ -181,16 +181,16 @@ class ui_card(QDialog):
         # описываем все строки которые будут добавлены в pdf отчет
         intro = '            Отчет об анализе на наличие лейкемии по пятну крови'.encode('utf-8')
         fio_intro = 'Данные пациента: '.encode('utf-8')
-        patient_fio = f'Фамилия: {self.label.text()} Имя: {self.label_2.text()} Отчество: {self.label_3.text()} полных лет: {self.patient_age}'.encode(
+        patient_fio = f'Фамилия: {self.label.text()}     Имя: {self.label_2.text()}     Отчество: {self.label_3.text()}     Полных лет: {self.patient_age}'.encode(
             'utf-8')
         patient = f'СНИЛС: {self.patient_snils}     диагноз по МКБ-10: {self.mkb_diagnose}     кол-во анализов {self.patient_count}'.encode(
             'utf-8')
         doctor_intro = 'Информация о лечащем враче: '.encode('utf-8')
-        doctor_fio = f'Фамилия: {self.doctor_name} Имя: {self.doctor_second_name} Отчество: {self.doctor_family}'.encode(
+        doctor_fio = f'Фамилия: {self.doctor_name}     Имя: {self.doctor_second_name}     Отчество: {self.doctor_family}'.encode(
             'utf-8')
         doctor_cat = f'Категория лечащего врача: {self.doctor_class}'.encode('utf-8')
         image_intro_norm = 'Изначальное изображение                          Изображение с аномалиями'.encode('utf-8')
-        if self.diagnose == 'лейкимия':
+        if self.diagnose == 'лейкемия':
             analys_result = '                            При анализе обнаружена лейкемия'.encode('utf-8')
         else:
             analys_result = '                              Заболеваний не обнаружено'.encode('utf-8')
@@ -225,8 +225,8 @@ class ui_card(QDialog):
         with open("image_from_db1.jpeg", "wb") as file:
             file.write(self.anomaly_image)
             file.close()
-        image_path = "C:/Users/nero1/PycharmProjects/pythonProject7/image_from_db.jpeg"
-        image_path1 = "C:/Users/nero1/PycharmProjects/pythonProject7/image_from_db1.jpeg"
+        image_path = "C:/Users/Maxim/PycharmProjects/leukemia_diplom/image_from_db.jpeg"
+        image_path1 = "C:/Users/Maxim/PycharmProjects/leukemia_diplom/image_from_db1.jpeg"
         existing_pdf_path = pdf_path
         target_page_number = 0
         add_image_to_existing_pdf(existing_pdf_path, image_path, image_path1, target_page_number)

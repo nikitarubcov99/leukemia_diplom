@@ -308,7 +308,7 @@ class Window(QMainWindow, QTableWidget):
         self.label_2.clear()
         self.label.clear()
         file_name = QFileDialog.getOpenFileName(self, 'Open file',
-                                                '"C:/Users/nero1"')[0]
+                                                '"C:/Users/Maxim"')[0]
         # Вызов метода для вывода изображения\
         self.label_13.setText(file_name)
         self.print_image()

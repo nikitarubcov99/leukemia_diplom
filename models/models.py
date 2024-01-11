@@ -1,7 +1,7 @@
 from peewee import *
 from datetime import datetime
 
-pg_db = PostgresqlDatabase('diplom', user='postgres', password='1234',
+pg_db = PostgresqlDatabase('diplom', user='postgres', password='41152',
                            host='localhost', port=5432)
 
 
